@@ -25,7 +25,7 @@ web:
     #   cpu: 500m
     #   memory: 512Mi
     # requests:
-  #   cpu: 250m
+    #   cpu: 250m
   #   memory: 256Mi
 worker:
   hpa:
@@ -45,18 +45,18 @@ worker:
     #   cpu: 500m
     #   memory: 512Mi
     # requests:
-  #   cpu: 250m
+    #   cpu: 250m
   #   memory: 256Mi
 
 services:
   name: chatwoot
-  internalPort: 443
-  targetPort: 443
+  internalPort: 80
+  targetPort: 80
   type: LoadBalancer
   annotations: { }
     # For example
     #  service.beta.kubernetes.io/aws-load-balancer-type: external
-  #  service.beta.kubernetes.io/aws-load-balancer-nlb-target-type: ip
+    #  service.beta.kubernetes.io/aws-load-balancer-nlb-target-type: ip
   #  service.beta.kubernetes.io/aws-load-balancer-scheme: internet-facing
   ports:
     - name: http
@@ -87,7 +87,7 @@ securityContext: { }
   #   drop:
   #   - ALL
   # readOnlyRootFilesystem: true
-# runAsNonRoot: true
+  # runAsNonRoot: true
 # runAsUser: 1000
 
 service:
@@ -111,7 +111,7 @@ ingress:
             service:
               name: chatwoot
               port:
-                number: 443
+                number: 80
   tls:
     - hosts:
         - chat.ctech.company
