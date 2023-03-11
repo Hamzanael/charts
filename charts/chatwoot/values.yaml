@@ -50,19 +50,14 @@ worker:
 
 services:
   name: chatwoot
-  internalPort: 80
-  targetPort: 80
+  internalPort: 3000
+  targetPort: 3000
   type: LoadBalancer
   annotations: { }
     # For example
     #  service.beta.kubernetes.io/aws-load-balancer-type: external
     #  service.beta.kubernetes.io/aws-load-balancer-nlb-target-type: ip
   #  service.beta.kubernetes.io/aws-load-balancer-scheme: internet-facing
-  ports:
-    - name: http
-      port: 80
-      targetPort: 3000
-      protocol: TCP
 
 imagePullSecrets: [ ]
 nameOverride: ""
@@ -95,27 +90,25 @@ service:
   port: 80
 
 ingress:
-  enabled: true
-  # For Kubernetes >= 1.18 you should specify the ingress-controller via the field ingressClassName
-  # See https://kubernetes.io/blog/2020/04/02/improvements-to-the-ingress-api-in-kubernetes-1.18/#specifying-the-class-of-an-ingress
-  # ingressClassName: nginx
+  enabled: ture
+  ingressClassName: nginx
   annotations:
-    kubernetes.io/ingress.class: nginx
-    kubernetes.io/tls-acme: "true"
+    nginx.org/proxy-body-size: "100m"
+    nginx.org/client-max-body-size: "100m"
+    nginx.org/location-snippets: |
+      proxy_set_header Upgrade $http_upgrade;
+      proxy_set_header Connection $connection_upgrade;
+      proxy_set_header X-Forwarded-Proto https;
   hosts:
-    - host: "chat.ctech.company"
+    - host: chat.ctech.company
       paths:
-        - path: /
-          pathType: Prefix
+        - pathType: Prefix
+          path: /
           backend:
             service:
               name: chatwoot
               port:
-                number: 80
-  tls:
-    - hosts:
-        - chat.ctech.company
-      secretName: chatwoot-tls-staging
+                number: 3000
 
 nodeSelector: { }
 
