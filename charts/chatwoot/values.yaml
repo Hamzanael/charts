@@ -90,7 +90,7 @@ service:
   port: 80
 
 ingress:
-  enabled: true
+  enabled: false
   ingressClassName: nginx
   annotations:
     nginx.org/proxy-body-size: "100m"
