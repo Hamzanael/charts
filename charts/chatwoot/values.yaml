@@ -51,18 +51,13 @@ worker:
 services:
   name: chatwoot
   internalPort: 3000
-  targetPort: 3000
+  targetPort: 80
   type: LoadBalancer
   annotations: {}
     # For example
     #  service.beta.kubernetes.io/aws-load-balancer-type: external
     #  service.beta.kubernetes.io/aws-load-balancer-nlb-target-type: ip
     #  service.beta.kubernetes.io/aws-load-balancer-scheme: internet-facing
-  ports:
-    - name: http
-      port: 80
-      targetPort: 3000
-      protocol: TCP
 
 imagePullSecrets: []
 nameOverride: ""
