@@ -52,7 +52,7 @@ services:
   name: chatwoot
   internalPort: 80
   targetPort: 80
-  type: ClusterIP
+  type: NodePort
   annotations: { }
     # For example
     #  service.beta.kubernetes.io/aws-load-balancer-type: external
