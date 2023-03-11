@@ -5,8 +5,8 @@ This repository contains helm charts for [Chatwoot](https://github.com/chatwoot/
 
 ## Installation
 ```bash
-helm repo add chatwoot https://github.com/Hamzanael/charts
-helm install chatwoot crocotech/chatwoot
+helm repo add chatwoot https://HamzaNael.github.io/charts
+helm install chatwoot chatwoot/chatwoot
 ```
 
 ## Configuration
