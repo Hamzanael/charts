@@ -20,18 +20,16 @@ keywords:
   - rails
   - crm
 maintainers:
-  - name: vishnu-narayanan
-    email: vishnu@chatwoot.com
-  - name: sojan-official
-    email: sojan@chatwoot.com
+  - name: hamza nael
+    email: hamza@ctech.company
 home: https://github.com/Hamzanael/charts
 icon: https://chatwoot-public-assets.s3.amazonaws.com/logo/square.png
 sources:
-  - https://github.com/chatwoot/chatwoot
+  - https://github.com/Hamzanael/chatwoot
   - http://www.chatwoot.com
 
 # This is the chart version.
-version: 1.0.16
+version: 1.0.17
 
 # This is the application version.
-appVersion: "v2.14.0"
+appVersion: "develop-ce"
