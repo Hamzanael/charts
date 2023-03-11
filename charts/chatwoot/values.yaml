@@ -50,9 +50,9 @@ worker:
 
 services:
   name: chatwoot
-  internalPort: 80
-  targetPort: 80
-  type: NodePort
+  internalPort: 3000
+  targetPort: 3000
+  type: ClusterIP
   annotations: { }
     # For example
     #  service.beta.kubernetes.io/aws-load-balancer-type: external
