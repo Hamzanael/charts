@@ -50,8 +50,8 @@ worker:
 
 services:
   name: chatwoot
-  internalPort: 3000
-  targetPort: 3000
+  internalPort: 80
+  targetPort: 80
   type: LoadBalancer
   annotations: { }
     # For example
@@ -108,7 +108,7 @@ ingress:
             service:
               name: chatwoot
               port:
-                number: 3000
+                number: 80
 
 nodeSelector: { }
 
