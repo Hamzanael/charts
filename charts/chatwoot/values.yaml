@@ -52,7 +52,7 @@ services:
   name: chatwoot
   internalPort: 80
   targetPort: 80
-  type: LoadBalancer
+  type: ClusterIP
   annotations: { }
     # For example
     #  service.beta.kubernetes.io/aws-load-balancer-type: external
@@ -90,7 +90,7 @@ service:
   port: 80
 
 ingress:
-  enabled: false
+  enabled: true
   ingressClassName: nginx
   annotations:
     nginx.org/proxy-body-size: "100m"
@@ -109,6 +109,10 @@ ingress:
               name: chatwoot
               port:
                 number: 80
+      tls:
+        - secretName: chatwoot-tls
+          hosts:
+            - chat.ctech.company
 
 nodeSelector: { }
 
