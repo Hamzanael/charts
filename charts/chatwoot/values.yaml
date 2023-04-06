@@ -92,8 +92,6 @@ service:
 ingress:
   enabled: false
   ingressClassName: nginx
-  data:
-    enable-underscores-in-headers: "true"
   annotations:
     nginx.org/proxy-body-size: "100m"
     nginx.org/client-max-body-size: "100m"
@@ -138,6 +136,18 @@ postgresql:
   # The following variables are only used when internal PG is disabled
   # postgresqlHost: postgres
   # postgresqlPort: 5432
+
+
+kind: ConfigMap
+apiVersion: v1
+metadata:
+  name: nginx-configuration
+  namespace: {{ .Release.Namespace | quote }}
+  labels:
+    app.kubernetes.io/name: ingress-nginx
+    app.kubernetes.io/part-of: ingress-nginx
+data:
+  enable-underscores-in-headers: "true"
 
 redis:
   enabled: true
