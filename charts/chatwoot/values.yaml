@@ -25,7 +25,7 @@ web:
     #   cpu: 500m
     #   memory: 512Mi
     # requests:
-    #   cpu: 250m
+  #   cpu: 250m
   #   memory: 256Mi
 worker:
   hpa:
@@ -45,7 +45,7 @@ worker:
     #   cpu: 500m
     #   memory: 512Mi
     # requests:
-    #   cpu: 250m
+  #   cpu: 250m
   #   memory: 256Mi
 
 services:
@@ -56,7 +56,7 @@ services:
   annotations: { }
     # For example
     #  service.beta.kubernetes.io/aws-load-balancer-type: external
-    #  service.beta.kubernetes.io/aws-load-balancer-nlb-target-type: ip
+  #  service.beta.kubernetes.io/aws-load-balancer-nlb-target-type: ip
   #  service.beta.kubernetes.io/aws-load-balancer-scheme: internet-facing
 
 imagePullSecrets: [ ]
@@ -82,7 +82,7 @@ securityContext: { }
   #   drop:
   #   - ALL
   # readOnlyRootFilesystem: true
-  # runAsNonRoot: true
+# runAsNonRoot: true
 # runAsUser: 1000
 
 service:
@@ -92,6 +92,8 @@ service:
 ingress:
   enabled: false
   ingressClassName: nginx
+  data:
+    enable-underscores-in-headers: "true"
   annotations:
     nginx.org/proxy-body-size: "100m"
     nginx.org/client-max-body-size: "100m"
