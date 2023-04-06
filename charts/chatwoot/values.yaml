@@ -99,6 +99,7 @@ ingress:
       proxy_set_header Upgrade $http_upgrade;
       proxy_set_header Connection $connection_upgrade;
       proxy_set_header X-Forwarded-Proto https;
+    nginx.org/enable-underscores-in-headers: "true"
   hosts:
     - host: chat.ctech.company
       paths:
@@ -136,18 +137,6 @@ postgresql:
   # The following variables are only used when internal PG is disabled
   # postgresqlHost: postgres
   # postgresqlPort: 5432
-
-
-kind: ConfigMap
-apiVersion: v1
-metadata:
-  name: nginx-configuration
-  namespace: {{ .Release.Namespace | quote }}
-  labels:
-    app.kubernetes.io/name: ingress-nginx
-    app.kubernetes.io/part-of: ingress-nginx
-data:
-  enable-underscores-in-headers: "true"
 
 redis:
   enabled: true
