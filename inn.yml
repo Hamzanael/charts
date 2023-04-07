@@ -4,6 +4,9 @@ metadata:
   name: ingress-chatsync
   annotations:
     cert-manager.io/issuer: letsencrypt-nginx
+    nginx.org/proxy-pass-headers: "api_access_token"
+  labels:
+    app: ingress-chatsync
 spec:
   tls:
     - hosts:

@@ -1,0 +1,43 @@
+kind: ConfigMap
+apiVersion: v1
+metadata:
+  name: ingress-nginx-controller
+  namespace: ingress-nginx
+  labels:
+    app.kubernetes.io/component: controller
+    app.kubernetes.io/instance: ingress-nginx
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/name: ingress-nginx
+    app.kubernetes.io/part-of: ingress-nginx
+    app.kubernetes.io/version: 1.6.4
+    helm.sh/chart: ingress-nginx-4.5.2
+  annotations:
+    meta.helm.sh/release-name: ingress-nginx
+    meta.helm.sh/release-namespace: ingress-nginx
+  managedFields:
+    - manager: helm
+      operation: Update
+      apiVersion: v1
+      time: '2023-03-11T17:11:30Z'
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:data:
+          .: { }
+          f:allow-snippet-annotations: { }
+        f:metadata:
+          f:annotations:
+            .: { }
+            f:meta.helm.sh/release-name: { }
+            f:meta.helm.sh/release-namespace: { }
+          f:labels:
+            .: { }
+            f:app.kubernetes.io/component: { }
+            f:app.kubernetes.io/instance: { }
+            f:app.kubernetes.io/managed-by: { }
+            f:app.kubernetes.io/name: { }
+            f:app.kubernetes.io/part-of: { }
+            f:app.kubernetes.io/version: { }
+            f:helm.sh/chart: { }
+data:
+  allow-snippet-annotations: 'true'
+  enable-underscores-in-headers: 'true'
