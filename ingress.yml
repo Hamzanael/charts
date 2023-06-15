@@ -10,9 +10,20 @@ metadata:
 spec:
   tls:
     - hosts:
+        - chat.sahalatsolutions.com
         - chat.ctech.company
       secretName: letsencrypt-nginx
   rules:
+    - host: chat.sahalatsolutions.com
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: chatsync-chatwoot
+                port:
+                  number: 3000
     - host: chat.ctech.company
       http:
         paths:

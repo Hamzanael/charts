@@ -12,7 +12,7 @@ spec:
     email: hnael99@gmail.com
     server: https://acme-v02.api.letsencrypt.org/directory
     privateKeySecretRef:
-      name: letsencrypt-nginx-private-key
+      name: letsencrypt-nginx-private-key # Secret name
     solvers:
       # Use the HTTP-01 challenge provider
       - http01:
