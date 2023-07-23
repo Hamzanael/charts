@@ -4,7 +4,7 @@
 # Overrides the image tag whose default is the chart appVersion.
 image:
   repository: crocotech/chatwoot
-  tag: v1.0.16-ce
+  tag: v1.0.17-ce
   pullPolicy: IfNotPresent
 
 web:
