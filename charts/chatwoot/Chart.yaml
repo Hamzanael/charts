@@ -29,7 +29,7 @@ sources:
   - http://www.chatwoot.com
 
 # This is the chart version.
-version: 1.0.65
+version: 1.0.66
 
 # This is the application version.
-appVersion: "v1.0.20-ce"
+appVersion: "v1.0.21-ce"
