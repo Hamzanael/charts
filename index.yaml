@@ -3,6 +3,42 @@ entries:
   chatwoot:
   - apiVersion: v2
     appVersion: v1.0.27-ce
+    created: "2023-08-22T14:20:44.830198194Z"
+    dependencies:
+    - condition: postgresql.enabled
+      name: postgresql
+      repository: https://charts.bitnami.com/bitnami
+      version: 11.6.7
+    - condition: redis.enabled
+      name: redis
+      repository: https://charts.bitnami.com/bitnami
+      version: 17.11.3
+    description: "Open-source customer engagement suite, an alternative to Intercom,
+      Zendesk, Salesforce Service Cloud etc. \U0001F525\U0001F4AC"
+    digest: c9dd17e81797e9cdcf955c8600ff405202549d0db052f65aef03115ae22d266e
+    home: https://github.com/Hamzanael/charts
+    icon: https://chatwoot-public-assets.s3.amazonaws.com/logo/square.png
+    keywords:
+    - chatwoot
+    - open source
+    - customer support
+    - chat
+    - ruby
+    - rails
+    - crm
+    maintainers:
+    - email: hamza@ctech.company
+      name: hamza nael
+    name: chatwoot
+    sources:
+    - https://github.com/Hamzanael/chatwoot
+    - http://www.chatwoot.com
+    type: application
+    urls:
+    - https://github.com/Hamzanael/charts/releases/download/chatwoot-1.0.72/chatwoot-1.0.72.tgz
+    version: 1.0.72
+  - apiVersion: v2
+    appVersion: v1.0.27-ce
     created: "2023-08-04T18:51:23.55814114Z"
     dependencies:
     - condition: postgresql.enabled
@@ -1909,4 +1945,4 @@ entries:
     urls:
     - https://github.com/Hamzanael/charts/releases/download/chatwoot-1.0.17/chatwoot-1.0.17.tgz
     version: 1.0.17
-generated: "2023-08-04T18:51:23.558844386Z"
+generated: "2023-08-22T14:20:44.830598397Z"
